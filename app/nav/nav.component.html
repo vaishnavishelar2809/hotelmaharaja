@@ -1,0 +1,91 @@
+<style>
+  .background-image {
+    background-image: url('../assets/h1.jpg');
+    /* Replace 'background.jpg' with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    /* Set the height of the background image to half of the viewport height */
+    position: relative;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg transparent-nav">
+  <div class="container">
+    <img src="../assets/s.jpg" alt="Hotel Logo" class="navbar-brand">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" [ngSwitch]="menuType">
+      <ul class="navbar-nav ml-auto" *ngSwitchCase="'guest'">
+        <li class="nav-item-active">
+          <a class="nav-link active" routerLink="/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/locate">LOCATE US</a>
+        </li>
+        <li class="nav-item-pill">
+          <a class="nav-link" routerLink="/register">REGISTER</a>
+        </li>
+        <li class="nav-item-pill">
+          <a class="nav-link" routerLink="/login">LOGIN</a>
+        </li>
+        <li class="nav-item-pill">
+          <a class="nav-link" routerLink="/admin-login">ADMIN-LOGIN</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto" *ngSwitchCase="'user'">
+        <li class="nav-item-active">
+          <a class="nav-link active" routerLink="/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">ABOUT US</a>
+        </li> <li class="nav-item">
+          <a class="nav-link" routerLink="/service">SERVICES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/locate">LOCATE US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact">FEEDBACK</a>
+        </li>
+        <li class="nav-item-pill">
+          <a class="nav-link" routerLink="/register">REGISTER</a>
+        </li>
+        <li class="nav-item-pill">
+          <a class="nav-link" (click)="slogout()">LOGOUT</a>
+        </li>
+      </ul>
+
+
+      <ul class="navbar-nav ml-auto" *ngSwitchCase="'admin'">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/view-register">VIEW REGISTER</a>
+        </li>
+        <li class="nav-item-pill">
+          <a class="nav-link" routerLink="/view-feedback">VIEW FEEDBACK</a>
+        </li>
+        <li class="nav-item-pill">
+          <a class="nav-link" routerLink="/view-booking">VIEW BOOKING</a>
+        </li>
+        <li class="nav-item-pill">
+          <a class="nav-link" (click)="alogout()">LOGOUT</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="background-image">
+  <div class="label">
+    <h1 class="size">H O T E L &nbsp;&nbsp; M A H A R A J A</h1>
+  </div>
+</div>

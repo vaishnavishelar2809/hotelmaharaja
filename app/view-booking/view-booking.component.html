@@ -1,0 +1,37 @@
+<br>
+<h1 style="text-align: center;">Booking</h1>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Room No</th>
+                        <th>Date</th>
+                        <th>Guest</th>
+                        <th>Stay</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tr *ngFor="let f of b">
+                   
+                    <td>{{f.id}}</td>
+                    <td>{{f.name}}</td>
+                    <td>{{f.email}}</td>
+                    <td>{{f.phone}}</td>
+                    <td>{{f.room_no}}</td>
+                    <td>{{f.date}}</td>
+                    <td>{{f.guest}}</td>
+                    <td>{{f.stay}}</td>
+                   
+            </table>
+        </div>
+    </div>
+</div>

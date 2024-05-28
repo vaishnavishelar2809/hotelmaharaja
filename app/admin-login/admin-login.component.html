@@ -1,0 +1,55 @@
+<br><br>
+<div class="about-section">
+  <h1>Admin-Login here...</h1>
+  <p>Admin-Login for meet our new updates.</p>
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <!-- Form column -->
+    <div class="col-md-9 order-2 order-md-1">
+      <form (submit)="submitdata()">
+        <div class="form-group">
+            <label for="email">Email Id:</label>
+            <input type="email" name="email" id="email" #email="ngModel" placeholder="Enter email here"
+              class="form-control" [(ngModel)]="ad.email" required>
+            <div *ngIf="!email.valid" style="color: red;">
+              <h6>
+                <div *ngIf="email.errors?.['required']">
+                  Email is required
+                </div>
+              </h6>
+              <h6>
+                <div *ngIf="email.errors?.['email']">
+                  Email must be required one special symbol, number, small character
+                </div>
+              </h6>
+            </div>
+          </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" #password="ngModel" placeholder="Enter Password here"
+            class="form-control" [(ngModel)]="ad.password" required>
+          <div *ngIf="!password.valid" style="color: red;">
+            <div *ngIf="password.errors?.['required']">
+              Passsword is required
+            </div>
+            <div *ngIf="password.errors?.['pattern']">
+              Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or 16
+              characters
+            </div>
+          </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+          <button type="reset" class="btn btn-danger">Reset</button>
+      </form>
+    </div>
+    <!-- Images column -->
+    <div class="col-md-3 order-1 order-md-2 d-none d-md-block side-images-container">
+      <!-- Placeholder images -->
+      <img src="../assets/r1.jpg" height="200px" width="250px" alt="Image 1">
+    </div>
+  </div>
+</div>
+<br><br><br>

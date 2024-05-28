@@ -1,0 +1,116 @@
+<br><br>
+<div class="about-section">
+  <h1>Register here...</h1>
+  <p>Register for make future bond with us...</p>
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 d-none d-md-block side-images-container">
+      <img src="../assets/r1.jpg" class="img-fluid side-images" alt="Image 1">
+      <hr>
+      <img src="../assets/r2.jpg" class="img-fluid side-images" alt="Image 1">
+      <hr>
+      <img src="../assets/r3.jpg" class="img-fluid side-images" alt="Image 1">
+
+    </div>
+    <div class="col-md-9">
+      <form #addfrm="ngForm" (ngSubmit)="submitdata()">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" name="name" #name="ngModel" ngModel required pattern="^[a-z A-Z]+$" class="form-control"
+            id="name" placeholder="Enter your name" [(ngModel)]="reg.name">
+          <div *ngIf="!name.valid" style="color: red;">
+            <h6>
+              <div *ngIf="name.errors?.['required']">
+                Candidate name is required
+              </div>
+            </h6>
+            <h6>
+              <div *ngIf="name.errors?.['pattern']">
+                Candidate name can contains only alphabets
+              </div>
+            </h6>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input type="text" class="form-control" id="city" placeholder="Enter your city" name="city" #city="ngModel"
+            [(ngModel)]="reg.city" required pattern="^[a-zA-Z]+$">
+          <div *ngIf="!city.valid" style="color: red;">
+            <h6>
+              <div *ngIf="city.errors?.['required']">
+                Candidate city is required
+              </div>
+            </h6>
+            <h6>
+              <div *ngIf="city.errors?.['pattern']">
+                Candidate city can contains only alphabets
+              </div>
+            </h6>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <input type="text" class="form-control" id="country" placeholder="Enter your country" name="country"
+            #country="ngModel" [(ngModel)]="reg.country" required pattern="^[a-zA-Z]+$">
+          <div *ngIf="!country.valid" style="color: red;">
+            <h6>
+              <div *ngIf="country.errors?.['required']">
+                Candidate country is required
+              </div>
+            </h6>
+            <h6>
+              <div *ngIf="country.errors?.['pattern']">
+                Candidate country can contains only alphabets
+              </div>
+            </h6>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Id:</label>
+          <input type="email" name="email" id="email" #email="ngModel" placeholder="Enter email here"
+            class="form-control" [(ngModel)]="reg.email" required>
+          <div *ngIf="!email.valid" style="color: red;">
+            <h6>
+              <div *ngIf="email.errors?.['required']">
+                Email is required
+              </div>
+            </h6>
+            <h6>
+              <div *ngIf="email.errors?.['email']">
+                Email must be required one special symbol, number, small character
+              </div>
+            </h6>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" #password="ngModel" placeholder="Enter Password here"
+            class="form-control" [(ngModel)]="reg.password" required pattern="^[@ a-zA-Z 1-9]+$">
+          <div *ngIf="!password.valid" style="color: red;">
+            <h6>
+              <div *ngIf="password.errors?.['required']">
+                Passsword is required
+              </div>
+            </h6>
+            <h6>
+              <div *ngIf="password.errors?.['pattern']">
+                Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or 16
+                characters
+              </div>
+            </h6>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+        <button type="reset" class="btn btn-danger">Reset</button><br>
+
+        <h5 style="color: blue;">If you already have an account?<a routerLink="/login">Login here..</a></h5>
+
+      </form>
+    </div>
+  </div>
+  <br>
+  <br>
+</div>

@@ -1,0 +1,67 @@
+<br><br>
+<div class="about-section">
+    <h1>Book Now</h1>
+    <p>Book your stay...</p>
+</div>
+<div class="container mt-5 ">
+    <div class="row justify-content-center">
+        <div class="col-md-6 border border-white">
+            <form (submit)="submitdata()">
+                <div class="form-group">
+                    <label for="firstName">
+                        Full Name
+                    </label>
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name" name="name"
+                        [(ngModel)]="b.name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email" name="email" required
+                        [(ngModel)]="b.email">
+                    <span id="email-pass"></span>
+                </div>
+                <div class="form-group">
+                    <label for="guest">No of guests</label>
+                    <input type="guest" class="form-control" id="guest" placeholder="Guest" name="guest" required
+                        [(ngModel)]="b.guest">
+                </div>
+                <div class="form-group">
+                    <label for="floor">Floor No(which you want?)</label>
+                    <input type="text" class="form-control" id="floor" placeholder="floor" name="floor"
+                        [(ngModel)]="b.floor">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date of Booking Room</label>
+                    <input type="date" class="form-control" id="date" name="date" required [(ngModel)]="b.date">
+                </div>
+                <div class="form-group">
+                    <label for="room_no">Room-No(Room no are given in services)</label>
+                    <input type="room_no" class="form-control" id="room_no" placeholder="room_no" name="room_no"
+                        required [(ngModel)]="b.room_no">
+                </div>
+                <div class="form-group">
+                    <label for="stay">Stay(How many days you want to stay hear?)</label>
+                    <input type="stay" class="form-control" id="stay" placeholder="stay" name="stay" required
+                        [(ngModel)]="b.stay">
+                </div>
+                <div class="form-group">
+                    <label for="contact">Phone</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Phone no"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)" maxlength="10"
+                        name="phone" required [(ngModel)]="b.phone">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+                <button type="reset" class="btn btn-danger" style="color: aliceblue;">Reset</button>
+
+            </form>
+            <h5 style="color: blue;">Terms and conditions</h5>
+            <h6 style="color: red;">we cant take responsibility to take floor or room to you which you want? If that
+                room was already booked by another candidate then you change your room no or floor its your
+                responsiblity</h6>
+        </div>
+    </div>
+</div>
+
+<!--footer code-->
+<br>
+<br>
